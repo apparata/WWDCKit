@@ -1,7 +1,7 @@
 import Foundation
 
 /// A content item representing a session, lab, article, or other WWDC resource.
-public struct WWDCContentItem: Codable, Sendable {
+public struct WWDCContentItem: Codable, Sendable, Identifiable {
     /// The unique identifier for the content item.
     public let id: String
     /// The ID linking to the static content.

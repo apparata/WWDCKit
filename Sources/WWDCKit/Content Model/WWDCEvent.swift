@@ -1,7 +1,7 @@
 import Foundation
 
 /// Represents a WWDC event including metadata, schedule, and registration information.
-public struct WWDCEvent: Codable, Sendable {
+public struct WWDCEvent: Codable, Sendable, Identifiable {
     /// The name of the event.
     public let name: String
     
