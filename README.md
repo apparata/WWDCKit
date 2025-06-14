@@ -7,9 +7,11 @@ A library for downloading the WWDC catalog of sessions, etc.
 
 See the LICENSE file for licensing information.
 
-## Example
+## Usage
 
-You can refresh the WWDC catalog by manually locating Developer.app and then feeding the URL to `WWDCService.fetchCatalogWithURLFromDeveloperApp(at:)`. You can save the catalog to disk using `WWDCCatalog.save(to:)` and then restore it using `WWDCCatalog.load(from:)` on the next launch.
+You can refresh the WWDC catalog by manually locating Developer.app on macOS and then feeding the URL to `WWDCService.fetchCatalogWithURLFromDeveloperApp(at:)`. You can save the catalog to disk using `WWDCCatalog.save(to:)` and then restore it using `WWDCCatalog.load(from:)` on the next launch.
+
+On iOS and visionOS, you would have to figure out the URL yourself and pass it in to `WWDCService.fetchCatalog(from url: URL)`.
 
 ### Fetching and Storing the Catalog
 

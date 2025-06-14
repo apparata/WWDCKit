@@ -3,6 +3,7 @@ import Foundation
 /// A service class responsible for fetching WWDC catalog data from various sources.
 public class WWDCService {
 
+    #if os(macOS)
     /// Attempts to extract a catalog URL from a Developer.app instance and load the catalog.
     ///
     /// - Parameter appURL: The URL to the Developer.app bundle.
@@ -24,6 +25,7 @@ public class WWDCService {
             throw WWDCError.failedToLoadWWDCCore
         }
     }
+    #endif
 
     /// Extracts a catalog URL from binary data and fetches the catalog from it.
     ///
