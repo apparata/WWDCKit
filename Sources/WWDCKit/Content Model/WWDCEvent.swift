@@ -1,7 +1,7 @@
 import Foundation
 
 /// Represents a WWDC event including metadata, schedule, and registration information.
-public struct WWDCEvent: Codable, Sendable, Identifiable {
+public struct WWDCEvent: Codable, Sendable, Identifiable, Hashable {
     /// The name of the event.
     public let name: String
     
@@ -54,7 +54,7 @@ public struct WWDCEvent: Codable, Sendable, Identifiable {
     public let signupInformation: SignupInformation?
     
     /// Signup-related information for a WWDC event.
-    public struct SignupInformation: Codable, Sendable {
+    public struct SignupInformation: Codable, Sendable, Hashable {
         /// The registration service identifier.
         public let registrationServiceID: String
         
@@ -65,7 +65,7 @@ public struct WWDCEvent: Codable, Sendable, Identifiable {
         public let localizedStrings: LocalizedStrings
         
         /// A collection of localized string values used for event registration and digital lounges.
-        public struct LocalizedStrings: Codable, Sendable {
+        public struct LocalizedStrings: Codable, Sendable, Hashable {
             /// Title for the attendance policy section.
             public let attendancePolicyTitle: String
             

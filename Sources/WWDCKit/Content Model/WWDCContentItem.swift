@@ -1,7 +1,7 @@
 import Foundation
 
 /// A content item representing a session, lab, article, or other WWDC resource.
-public struct WWDCContentItem: Codable, Sendable, Identifiable {
+public struct WWDCContentItem: Codable, Sendable, Identifiable, Hashable {
     /// The unique identifier for the content item.
     public let id: String
     /// The ID linking to the static content.
@@ -103,7 +103,7 @@ public struct WWDCContentItem: Codable, Sendable, Identifiable {
     }
     
     /// Signup information for labs or events.
-    public struct SignupInformation: Codable, Sendable {
+    public struct SignupInformation: Codable, Sendable, Hashable {
         /// The start date of the signup period.
         public let startDate: Date
         /// The end date of the signup period.
@@ -126,13 +126,13 @@ public struct WWDCContentItem: Codable, Sendable, Identifiable {
         public let registrationServiceQuestionIDs: RegistrationServiceQuestionIDs?
         
         /// A rule set used in signup.
-        public struct RuleSet: Codable, Sendable {
+        public struct RuleSet: Codable, Sendable, Identifiable, Hashable {
             /// The identifier of the rule set.
             public let id: String
         }
         
         /// Question IDs for the registration service.
-        public struct RegistrationServiceQuestionIDs: Codable, Sendable {
+        public struct RegistrationServiceQuestionIDs: Codable, Sendable, Hashable {
             /// URL for app-related questions.
             public let appURL: String
             /// URL for design-related questions.
@@ -149,7 +149,7 @@ public struct WWDCContentItem: Codable, Sendable, Identifiable {
     }
     
     /// A code snippet referenced in the content.
-    public struct CodeSnippet: Codable, Sendable {
+    public struct CodeSnippet: Codable, Sendable, Hashable {
         /// The title of the code snippet.
         public let title: String
         /// The start time of the snippet in seconds.
@@ -165,7 +165,7 @@ public struct WWDCContentItem: Codable, Sendable, Identifiable {
     }
     
     /// Media resources such as video or slides.
-    public struct Media: Codable, Sendable {
+    public struct Media: Codable, Sendable, Hashable {
         /// The URL to the HLS stream.
         public let hls: URL
         /// Duration of the media in seconds.
@@ -188,7 +188,7 @@ public struct WWDCContentItem: Codable, Sendable, Identifiable {
         public let slides: URL?
         
         /// A chapter within the media.
-        public struct Chapter: Codable, Sendable {
+        public struct Chapter: Codable, Sendable, Hashable {
             /// The start time of the chapter in seconds.
             public let start: Int
             /// The title of the chapter.
@@ -201,7 +201,7 @@ public struct WWDCContentItem: Codable, Sendable, Identifiable {
     }
     
     /// Related resources or activities.
-    public struct Related: Codable, Sendable {
+    public struct Related: Codable, Sendable, Hashable {
         /// Related resource IDs.
         public let resources: [Int]?
         /// Related activity identifiers.

@@ -1,14 +1,14 @@
 import Foundation
 
 /// Represents a resource associated with WWDC content, such as PDFs, links, or other downloads.
-public struct WWDCResource: Codable, Sendable, Identifiable {
-    
-    /// The title of the resource.
-    public let title: String
-    
+public struct WWDCResource: Codable, Sendable, Identifiable, Hashable {
+
     /// A unique identifier for the resource.
     public let id: Int
-    
+
+    /// The title of the resource.
+    public let title: String
+
     /// The URL where the resource can be accessed.
     public let url: URL
     

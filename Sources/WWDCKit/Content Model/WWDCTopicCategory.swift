@@ -1,7 +1,7 @@
 import Foundation
 
 /// Represents a category that groups related WWDC topics together.
-public struct WWDCTopicCategory: Codable, Sendable, Identifiable {
+public struct WWDCTopicCategory: Codable, Sendable, Identifiable, Hashable {
 
     /// The unique identifier for the topic category.
     public let id: Int

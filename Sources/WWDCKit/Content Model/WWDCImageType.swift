@@ -1,14 +1,14 @@
 import Foundation
 
 /// Represents a type of image used in WWDC content, with different size variants.
-public struct WWDCImageType: Codable, Sendable {
+public struct WWDCImageType: Codable, Sendable, Hashable {
     /// The name of the image type (e.g., "thumbnail", "banner").
     public let name: String
     /// A list of size variants for this image type.
     public let variants: [Variant]
     
     /// A size variant of the image type.
-    public struct Variant: Codable, Sendable {
+    public struct Variant: Codable, Sendable, Hashable {
         /// The width of the image variant in pixels.
         public let width: Int
         /// The height of the image variant in pixels.

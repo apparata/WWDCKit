@@ -1,7 +1,7 @@
 import Foundation
 
 /// A catalog representing WWDC content including events, sessions, resources, and metadata.
-public struct WWDCCatalog: Codable, Sendable {
+public struct WWDCCatalog: Codable, Sendable, Hashable {
 
     /// A list of WWDC events.
     public let events: [WWDCEvent]

@@ -1,7 +1,7 @@
 import Foundation
 
 /// Represents a room at WWDC where sessions or events may take place.
-public struct WWDCRoom: Codable, Sendable, Identifiable {
+public struct WWDCRoom: Codable, Sendable, Identifiable, Hashable {
 
     /// The unique identifier for the room.
     public let id: Int

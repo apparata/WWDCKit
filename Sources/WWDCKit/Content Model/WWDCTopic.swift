@@ -1,7 +1,7 @@
 import Foundation
 
 /// Represents a topic associated with WWDC content, such as a subject or technology focus.
-public struct WWDCTopic: Codable, Sendable, Identifiable {
+public struct WWDCTopic: Codable, Sendable, Identifiable, Hashable {
 
     /// The unique identifier for the topic.
     public let id: Int
